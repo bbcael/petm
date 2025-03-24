@@ -114,6 +114,7 @@ p4 = plot(linspace(max(abs(oa)),max(abs(oa))),linspace(-1,1),'--','linewidth',2,
 [~,ic] = max(abs(ca)); ca((ic-1):ic) = []; oa(ic) = []; t(ic) = []; % remove PETM to find next-largest anomalies
 oa(t>-4) = []; % remove G-IG d18O anomalies because these are qualitatively different dynamics
 % SENSITIVITY TEST #8 -- don't remove G-IG d18O anomalies in to see that even these aren't larger than expected
+% SENSITIVITY TEST #9 -- remove G-IG cycle (last 4 Ma) entirely from analysis [n.b. does not affect conclusions]
 p5 = plot(linspace(max(abs(ca)),max(abs(ca))),linspace(-1,1),':','linewidth',2,'color',[.05 .5 .5])
 p6 = plot(linspace(max(abs(oa)),max(abs(oa))),linspace(-1,1),':','linewidth',2,'color',[.75 .4 .05])
 lgnd = legend([p1 p2 p4 p3 p6 p5],'\delta^{18}O Expected Maximum Distribution','\delta^{13}C Expected Maximum Distribution','\delta^{18}O PETM Signature','\delta^{13}C PETM Signature','\delta^{18}O Next-Largest Anomaly','\delta^{13}C Next-Largest Anomaly');
